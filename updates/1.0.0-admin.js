@@ -1,0 +1,1 @@
+const keystone = require('keystone'),    User = keystone.list('User');exports = module.exports = function (done) {    new User.model({        name: {firstName: 'tian', lastName: 'jin'},        email: 'tianjin@keystone.com',        password: 'admin',        canAccessKeystone: true    }).save(done)}

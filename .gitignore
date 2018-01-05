@@ -1,0 +1,27 @@
+# Ignore .DS_Store files on OS X
+.DS_Store
+
+.env
+
+db
+.idea/
+angular/node_modules
+angular/dist-local
+
+angular/src/**/*.map
+angular/src/**/*.js
+.idea/
+node_modules
+
+!node_modules/keystone
+
+!node_modules/marked_extended
+
+!node_modules/highlight
+
+!node_modules/express-oauth-server
+
+*.log
+
+
+

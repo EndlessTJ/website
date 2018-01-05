@@ -1,0 +1,38 @@
+{
+  "name": "my-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TJ-person website",
+  "author": "tianjin<tianjindd@gmail.com>",
+  "main": "index.js",
+  "dependencies": {
+    "async": "2.1.4",
+    "dotenv": "4.0.0",
+    "keystone": "4.0.0-beta.5",
+    "keystone-email": "1.0.5",
+    "lodash": "^4.13.1",
+    "node-sass": "^4.5.0",
+    "node-sass-middleware": "0.11.0",
+    "pug": "2.0.0-beta11"
+  },
+  "devDependencies": {
+    "eslint": "3.15.0",
+    "eslint-config-keystone": "3.0.0",
+    "eslint-plugin-react": "^5.1.1",
+    "nodemon": "^1.12.4",
+    "webpack": "^3.10.0",
+    "webpack-dev-middleware": "^1.12.2",
+    "webpack-hot-middleware": "^2.21.0"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "nodemon": "nodemon",
+    "start": "nodemon index.js"
+  },
+  "nodemonConfig": {
+    "verbose": true,
+    "ignore": ["angular/*", "public/*", "db/*"],
+    "execMap": {
+    }
+  }
+}

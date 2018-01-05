@@ -1,0 +1,1 @@
+import { NgModule } from '@angular/core';import { RouterModule, Routes } from '@angular/router';import { WeatherComponet } from './weather.componet';const routes: Routes = [  {    path: 'weather',    component: WeatherComponet  }];@NgModule({  imports: [RouterModule.forRoot(routes)],  exports: [RouterModule]})export class RoutingModule {}
