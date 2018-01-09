@@ -5,11 +5,15 @@
   </nav>
   <div class="slide">
     <div class="slide-item-container">
-      <div class="slide-item" *ngFor="let item of slideData;let i = index" [@slide]="state" [ngStyle]="{'background-color':item.imageUrl}">{{item.describe}}</div>
+      <div class="slide-item" *ngFor="let item of slideData;let i = index" (@slider.start)="animationStarted($event)" (@slider.done)="animateDone($event)" [@slider]="imageState(i)" [ngStyle]="{'background-color':item.imageUrl}">{{item.describe}}</div>
     </div>
     <div class="indicator-list">
-      <span class="indicator"  (click)="contorlSlide(i)" *ngFor="let item of slideData; let i = index"></span>
+      <span class="indicator" (mouseenter)="slideIn(i)" (mouseleave)="slideOut(i)" [ngClass]="{'active': i === ((controlCount===0) ? controlCount : (controlCount - 1)) }" *ngFor="let item of slideData; let i = index"></span>
     </div>
+  </div>
+  <div class="toast">
+    <button class="toast-emit" (click)="showToast()">点击触发</button>
+    <div class="toast-msg" *ngIf="toastShow" [@toastfadein]="shoin" (@toastfadein.done)="toastHide($event)">提示信息</div>
   </div>
   <router-outlet></router-outlet>
 </div>
